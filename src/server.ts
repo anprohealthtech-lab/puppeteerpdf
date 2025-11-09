@@ -61,9 +61,18 @@ async function getBrowser(): Promise<Browser> {
   if (!browserInstance) {
     const launchStart = Date.now();
     console.log('🚀 Launching new Puppeteer browser...');
+    console.log('📍 PUPPETEER_CACHE_DIR =', process.env.PUPPETEER_CACHE_DIR);
+    
+    try {
+      // Log executable path for debugging
+      const execPath = puppeteer.executablePath();
+      console.log('📍 Chrome executable path:', execPath);
+    } catch (err) {
+      console.warn('⚠️ Could not determine executablePath:', err);
+    }
     
     browserInstance = await puppeteer.launch({
-      headless: true,
+      headless: 'new', // Use new headless mode
       args: [
         '--no-sandbox',
         '--disable-setuid-sandbox',

@@ -17,8 +17,6 @@ services:
         value: production
       - key: PORT
         value: "3000"
-      - key: PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
-        value: "false"
       - key: PUPPETEER_CACHE_DIR
         value: "/workspace/.cache/puppeteer"
     health_check:

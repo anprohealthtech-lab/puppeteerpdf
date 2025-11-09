@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "sh start.sh",
+    "postinstall": "npx puppeteer browsers install chrome",
+    "start": "node dist/server.js",
     "dev": "tsx watch src/server.ts",
     "test": "node dist/server.js"
   },
