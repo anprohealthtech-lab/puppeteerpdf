@@ -7,7 +7,7 @@ services:
       repo: dranandnandi/lims-11-9
       branch: bill-dr-location-b2b
       deploy_on_push: true
-    build_command: npm install && npx puppeteer browsers install chrome && npm run build
+    build_command: npm install && npm run build
     run_command: npm start
     http_port: 3000
     instance_count: 1
